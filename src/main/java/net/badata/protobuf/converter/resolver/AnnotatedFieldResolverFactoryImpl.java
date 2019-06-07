@@ -22,12 +22,6 @@ public class AnnotatedFieldResolverFactoryImpl implements FieldResolverFactory {
      * {@inheritDoc}
      */
     @Override
-    public FieldResolver createResolver(final Field field) {
-        System.out.println("AnnotatedFieldResolverFactoryImpl ... Field name: " + field.getName());
-        return createResolver(field, null);
-    }
-
-    @Override
     public FieldResolver createResolver(Field field, Object domain) {
         DefaultFieldResolverImpl fieldResolver = new DefaultFieldResolverImpl(field);
         if (field.isAnnotationPresent(ProtoField.class)) {
