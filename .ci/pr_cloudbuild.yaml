@@ -1,5 +1,5 @@
 steps:
-- name: 'us.gcr.io/helix-global/cloud-builders/gradle:openjdk11'
+- name: 'gcr.io/cloud-builders/gradle:latest'
   entrypoint: 'bash'
   args:
   - '-c'
