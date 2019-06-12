@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/gradle:latest'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    export buildVersion=`cat concourse_build_version`
+    export helixRepoUser=${_REPO_USER}
+    export helixRepoPassword=${_REPO_PASSWORD}
+    gradle publish -PhelixRepoUser=$$helixRepoUser -PhelixRepoPassword=$$helixRepoPassword -PbuildVersion=$$buildVersion
+   
