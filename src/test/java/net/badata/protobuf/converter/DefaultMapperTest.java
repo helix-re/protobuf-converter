@@ -113,6 +113,8 @@ public class DefaultMapperTest {
 		result = mapper.mapToDomainField(findDomainField("stringValue"), testProtobuf, testDomain);
 		testMappingResult(result, Result.MAPPED, testProtobuf.getStringValue(), testDomain);
 
+		result = mapper.mapToDomainField(findDomainField("timestampValue"), testProtobuf, testDomain);
+		testMappingResult(result, Result.MAPPED, null, testDomain);
 	}
 
 	private FieldResolver findDomainField(final String fieldName) {
@@ -177,6 +179,9 @@ public class DefaultMapperTest {
 
 		result = mapper.mapToProtobufField(findDomainField("stringValue"), testDomain, protobufBuilder);
 		testMappingResult(result, Result.MAPPED, testDomain.getStringValue(), protobufBuilder);
+
+		result = mapper.mapToProtobufField(findDomainField("timestampValue"), testDomain, protobufBuilder);
+		testMappingResult(result, Result.MAPPED, null, protobufBuilder);
 	}
 
 

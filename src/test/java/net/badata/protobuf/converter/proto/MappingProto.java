@@ -633,6 +633,19 @@ public final class MappingProto {
      */
     net.badata.protobuf.converter.proto.MappingProto.NestedTestOrBuilder getNestedListValueOrBuilder(
         int index);
+
+    /**
+     * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+     */
+    boolean hasTimestampValue();
+    /**
+     * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+     */
+    com.google.protobuf.Timestamp getTimestampValue();
+    /**
+     * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder();
   }
   /**
    * Protobuf type {@code net.badata.protobuf.converter.proto.MappingTest}
@@ -748,6 +761,19 @@ public final class MappingProto {
               }
               nestedListValue_.add(
                   input.readMessage(net.badata.protobuf.converter.proto.MappingProto.NestedTest.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestampValue_ != null) {
+                subBuilder = timestampValue_.toBuilder();
+              }
+              timestampValue_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestampValue_);
+                timestampValue_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -945,6 +971,27 @@ public final class MappingProto {
       return nestedListValue_.get(index);
     }
 
+    public static final int TIMESTAMPVALUE_FIELD_NUMBER = 10;
+    private com.google.protobuf.Timestamp timestampValue_;
+    /**
+     * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+     */
+    public boolean hasTimestampValue() {
+      return timestampValue_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+     */
+    public com.google.protobuf.Timestamp getTimestampValue() {
+      return timestampValue_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestampValue_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
+      return getTimestampValue();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -983,6 +1030,9 @@ public final class MappingProto {
       }
       for (int i = 0; i < nestedListValue_.size(); i++) {
         output.writeMessage(9, nestedListValue_.get(i));
+      }
+      if (timestampValue_ != null) {
+        output.writeMessage(10, getTimestampValue());
       }
       unknownFields.writeTo(output);
     }
@@ -1031,6 +1081,10 @@ public final class MappingProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, nestedListValue_.get(i));
       }
+      if (timestampValue_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getTimestampValue());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1072,6 +1126,11 @@ public final class MappingProto {
           .equals(other.getStringListValueList());
       result = result && getNestedListValueList()
           .equals(other.getNestedListValueList());
+      result = result && (hasTimestampValue() == other.hasTimestampValue());
+      if (hasTimestampValue()) {
+        result = result && getTimestampValue()
+            .equals(other.getTimestampValue());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1110,6 +1169,10 @@ public final class MappingProto {
       if (getNestedListValueCount() > 0) {
         hash = (37 * hash) + NESTEDLISTVALUE_FIELD_NUMBER;
         hash = (53 * hash) + getNestedListValueList().hashCode();
+      }
+      if (hasTimestampValue()) {
+        hash = (37 * hash) + TIMESTAMPVALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestampValue().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1267,6 +1330,12 @@ public final class MappingProto {
         } else {
           nestedListValueBuilder_.clear();
         }
+        if (timestampValueBuilder_ == null) {
+          timestampValue_ = null;
+        } else {
+          timestampValue_ = null;
+          timestampValueBuilder_ = null;
+        }
         return this;
       }
 
@@ -1315,6 +1384,11 @@ public final class MappingProto {
           result.nestedListValue_ = nestedListValue_;
         } else {
           result.nestedListValue_ = nestedListValueBuilder_.build();
+        }
+        if (timestampValueBuilder_ == null) {
+          result.timestampValue_ = timestampValue_;
+        } else {
+          result.timestampValue_ = timestampValueBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1415,6 +1489,9 @@ public final class MappingProto {
               nestedListValueBuilder_.addAllMessages(other.nestedListValue_);
             }
           }
+        }
+        if (other.hasTimestampValue()) {
+          mergeTimestampValue(other.getTimestampValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2093,6 +2170,123 @@ public final class MappingProto {
         }
         return nestedListValueBuilder_;
       }
+
+      private com.google.protobuf.Timestamp timestampValue_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampValueBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public boolean hasTimestampValue() {
+        return timestampValueBuilder_ != null || timestampValue_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public com.google.protobuf.Timestamp getTimestampValue() {
+        if (timestampValueBuilder_ == null) {
+          return timestampValue_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestampValue_;
+        } else {
+          return timestampValueBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public Builder setTimestampValue(com.google.protobuf.Timestamp value) {
+        if (timestampValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timestampValue_ = value;
+          onChanged();
+        } else {
+          timestampValueBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public Builder setTimestampValue(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (timestampValueBuilder_ == null) {
+          timestampValue_ = builderForValue.build();
+          onChanged();
+        } else {
+          timestampValueBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public Builder mergeTimestampValue(com.google.protobuf.Timestamp value) {
+        if (timestampValueBuilder_ == null) {
+          if (timestampValue_ != null) {
+            timestampValue_ =
+              com.google.protobuf.Timestamp.newBuilder(timestampValue_).mergeFrom(value).buildPartial();
+          } else {
+            timestampValue_ = value;
+          }
+          onChanged();
+        } else {
+          timestampValueBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public Builder clearTimestampValue() {
+        if (timestampValueBuilder_ == null) {
+          timestampValue_ = null;
+          onChanged();
+        } else {
+          timestampValue_ = null;
+          timestampValueBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getTimestampValueBuilder() {
+        
+        onChanged();
+        return getTimestampValueFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
+        if (timestampValueBuilder_ != null) {
+          return timestampValueBuilder_.getMessageOrBuilder();
+        } else {
+          return timestampValue_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : timestampValue_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestampValue = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getTimestampValueFieldBuilder() {
+        if (timestampValueBuilder_ == null) {
+          timestampValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getTimestampValue(),
+                  getParentForChildren(),
+                  isClean());
+          timestampValue_ = null;
+        }
+        return timestampValueBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -2162,17 +2356,19 @@ public final class MappingProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022mapping_test.proto\022#net.badata.protobu" +
-      "f.converter.proto\"!\n\nNestedTest\022\023\n\013strin" +
-      "gValue\030\001 \001(\t\"\257\002\n\013MappingTest\022\020\n\010intValue" +
-      "\030\001 \001(\005\022\021\n\tlongValue\030\002 \001(\003\022\022\n\nfloatValue\030" +
-      "\003 \001(\002\022\023\n\013doubleValue\030\004 \001(\001\022\024\n\014booleanVal" +
-      "ue\030\005 \001(\010\022\023\n\013stringValue\030\006 \001(\t\022D\n\013nestedV" +
-      "alue\030\007 \001(\0132/.net.badata.protobuf.convert" +
-      "er.proto.NestedTest\022\027\n\017stringListValue\030\010" +
-      " \003(\t\022H\n\017nestedListValue\030\t \003(\0132/.net.bada" +
-      "ta.protobuf.converter.proto.NestedTestB3" +
-      "\n#net.badata.protobuf.converter.protoB\014M" +
-      "appingProtob\006proto3"
+      "f.converter.proto\032\037google/protobuf/times" +
+      "tamp.proto\"!\n\nNestedTest\022\023\n\013stringValue\030" +
+      "\001 \001(\t\"\343\002\n\013MappingTest\022\020\n\010intValue\030\001 \001(\005\022" +
+      "\021\n\tlongValue\030\002 \001(\003\022\022\n\nfloatValue\030\003 \001(\002\022\023" +
+      "\n\013doubleValue\030\004 \001(\001\022\024\n\014booleanValue\030\005 \001(" +
+      "\010\022\023\n\013stringValue\030\006 \001(\t\022D\n\013nestedValue\030\007 " +
+      "\001(\0132/.net.badata.protobuf.converter.prot" +
+      "o.NestedTest\022\027\n\017stringListValue\030\010 \003(\t\022H\n" +
+      "\017nestedListValue\030\t \003(\0132/.net.badata.prot" +
+      "obuf.converter.proto.NestedTest\0222\n\016times" +
+      "tampValue\030\n \001(\0132\032.google.protobuf.Timest" +
+      "ampB3\n#net.badata.protobuf.converter.pro" +
+      "toB\014MappingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2185,6 +2381,7 @@ public final class MappingProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_net_badata_protobuf_converter_proto_NestedTest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2197,7 +2394,8 @@ public final class MappingProto {
     internal_static_net_badata_protobuf_converter_proto_MappingTest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_net_badata_protobuf_converter_proto_MappingTest_descriptor,
-        new java.lang.String[] { "IntValue", "LongValue", "FloatValue", "DoubleValue", "BooleanValue", "StringValue", "NestedValue", "StringListValue", "NestedListValue", });
+        new java.lang.String[] { "IntValue", "LongValue", "FloatValue", "DoubleValue", "BooleanValue", "StringValue", "NestedValue", "StringListValue", "NestedListValue", "TimestampValue", });
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

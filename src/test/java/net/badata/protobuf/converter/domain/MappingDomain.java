@@ -4,6 +4,7 @@ import net.badata.protobuf.converter.annotation.ProtoClass;
 import net.badata.protobuf.converter.annotation.ProtoField;
 import net.badata.protobuf.converter.proto.MappingProto;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,8 +34,8 @@ public class MappingDomain {
 		private List<String> simpleListValue;
 		@ProtoField
 		private List<NestedTest> nestedListValue;
-
-
+		@ProtoField
+		private Date timestampValue;
 
 		public Long getLongValue() {
 			return longValue;
@@ -106,6 +107,14 @@ public class MappingDomain {
 
 		public void setNestedListValue(final List<NestedTest> nestedListValue) {
 			this.nestedListValue = nestedListValue;
+		}
+
+		public Date getTimestampValue() {
+			return timestampValue;
+		}
+
+		public void setTimestampValue(Date timestampValue) {
+			this.timestampValue = timestampValue;
 		}
 	}
 
